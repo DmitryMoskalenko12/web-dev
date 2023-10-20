@@ -1,0 +1,15 @@
+@use './variables';
+
+@font-face {
+  font-family: 'TharLon';
+  src: url('fonts/Tharlon-Regular.ttf') format('truetype'),
+  url('fonts/Tharlon-Regular.ttf') format('truetype');
+  font-weight: variables.$font-weight400;
+}
+
+@font-face {
+  font-family: 'Tenor Sans';
+  src: url('fonts/TenorSans.ttf') format('truetype'),
+  url('fonts/TenorSans.ttf') format('truetype');
+  font-weight: variables.$font-weight400;
+}
