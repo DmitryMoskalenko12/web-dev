@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lamp</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
 </head>
 <body>
   <main>
@@ -175,7 +177,7 @@
         <hr class="header__hr">
       </div>
     </header>
-    <!-- Tabs -->
+
     <section class="tabs">
      <div class="container">
       <div class="tabs__wrapper">
@@ -289,20 +291,59 @@
           </div>
 
           <div class="tabs__nav-arrow">
-            <button>
+            <button class="tabs__nav-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M19.5 12H4.5M4.5 12L11.25 5.25M4.5 12L11.25 18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </button>
-            <button>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="15" viewBox="0 0 28 15" fill="none">
-                <path d="M1 7.5H27M27 7.5L20.25 1M27 7.5L20.25 14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <button class="tabs__nav-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"   viewBox="0 0 24 24" fill="none">
+              <path d="M4.5 12H19.5M19.5 12L12.75 5.25M19.5 12L12.75 18.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </button>
           </div>
         </div>
       </div>
      </div>
+    </section>
+
+    <section class="carousel">
+        <h2 class="carousel__title">DISCOVER OUR</h2>
+        <h3 class="carousel__main-title">NEW COLLECTION</h3>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide1.webp" alt="You will see lamp">
+              <div class="carousel__img-title">invisible</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide2.webp" alt="You will see lamp">
+              <div class="carousel__img-title">lamp</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide3.webp" alt="You will see lamp">
+              <div class="carousel__img-title">lampshades</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide4.webp" alt="You will see lamp">
+              <div class="carousel__img-title">ceiling</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide5.webp" alt="You will see lamp">
+              <div class="carousel__img-title">LED</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+            <div class="swiper-slide">
+              <img class="carousel__img" src="img/slide6.webp" alt="You will see lamp">
+              <div class="carousel__img-title">LED</div>
+              <a class="carousel__link" href="#">view more</a>
+            </div>
+          </div>
+        </div>
     </section>
   </main>
 </body>

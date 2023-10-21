@@ -2,6 +2,7 @@
 @use 'mixins';
 
 .header {
+  min-height: 90px;
   padding: 15px;
   background-color: variables.$first-back;
 
@@ -182,6 +183,7 @@
 
 @media (min-width: 768px) {
   .header {
+    min-height: 88px;
     &__main-header {
      flex-direction: row;  
     }
@@ -297,6 +299,12 @@
   }
 }
 
+@media(min-width: 1165px) {
+  .header {
+    min-height: 90px
+  }
+}
+
 @media (min-width: 1200px) {
   .header {
 
@@ -349,7 +357,7 @@
 
 @media (min-width: 1440px) {
   .header {
-    padding: 15px 60px 15px 60px;
+    padding: 15px 60px 22px 60px;
 
    &__li {
     a {
@@ -388,6 +396,8 @@
 
 @media (min-width: 1920px) {
   .header {
+    min-height: 140px;
+    padding: 30px 162px 30px 162px;
    &__main-title {
     &::after {
       content: '';

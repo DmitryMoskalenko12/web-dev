@@ -2,15 +2,18 @@
 @use 'mixins';
 
 .tabs {
-  min-height: 666px;
   padding: 15px;
   background-color: variables.$first-back;
 
   &__block {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  &__block-active {
+    display: flex;
   }
 
   &__img1 {
@@ -130,5 +133,230 @@
 
   &__nav-arrow {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .tabs {
+    &__block {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    &__img1 {
+      position: relative;
+      width: 865px;
+      height: 100%;
+    }
+
+    &__picture2 {
+      width: 270px;
+      height: 100%;
+    }
+
+    &__title-img2 {
+      margin-top: 12px;
+    }
+
+    &__descr-img2 {
+      width: 240px;
+      margin-top: 12px;
+    }
+
+    &__price-img2 {
+      margin-top: 12px;
+    }
+
+    &__nav {
+     margin-top: 20px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .tabs {
+    &__block {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    &__img1 {
+      width: 455px;
+    }
+
+    &__picture2 {
+      width: 333px;
+      height: 100%;
+    }
+
+    &__descr-img2 {
+      width: 240px;
+      margin-top: 5px;
+    }
+
+    &__title-img2 {
+      margin-top: 5px;
+    }
+
+    &__price-img2 {
+      margin-top: 6px;
+    }
+
+    &__nav {
+      justify-content: space-between;
+    }
+
+    &__nav-arrow {
+      @include mixins.flex(flex, center, center);
+      flex-direction: column;
+    }
+
+    &__nav-number {
+      margin: 0;
+    }
+
+    &__nav-button {
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+  }
+}
+
+@media (min-width: 1200px) {
+  .tabs {
+    &__img1 {
+    width: 580px;
+   }
+
+   &__descr-img2 {
+    width: 270px;
+   }
+
+   &__title-img2 {
+    font-size: variables.$font-size25;
+    margin-top: 12px;
+   }
+
+   &__picture2 {
+    width: 420px;
+   }
+
+   &__descr-img2 {
+    font-size: variables.$font-size16;
+    margin-top: 12px;
+    width: 292px;
+  }
+
+  &__price1 {
+    font-size: variables.$font-size24;
+  }
+
+  &__price2 {
+    font-size: variables.$font-size16;
+  }
+
+  &__descr-img1 {
+    top: 150px;
+    left: -41px;
+  }
+
+  &__title {
+    font-size: variables.$font-size40;
+  }
+
+  &__link {
+    font-size: variables.$font-size22;
+  }
+}
+}
+
+@media (min-width: 1440px) {
+  .tabs {
+   &__img1 {
+    width: 650px;
+   }
+
+   &__descr-img1 {
+    top: 183px;
+    left: -55px;
+   }
+
+   &__picture2 {
+    width: 500px;
+   }
+  }
+}
+
+@media (min-width: 1920px) {
+  .tabs {
+    padding: 133px 155px 47px 155px;
+   &__img1 {
+    width: 770px;
+   }
+
+   &__descr-img1 {
+    top: 183px;
+    left: -55px;
+   }
+
+   &__picture2 {
+    width: 560px;
+   }
+
+   &__nav-number {
+    gap: 25px;
+   }
+
+   &__number {
+    font-size: variables.$font-size26;
+   }
+
+   &__number-active {
+    font-size: variables.$font-size30;
+   }
+
+   &__title {
+    font-size: variables.$font-size59;
+   }
+
+   &__link {
+    font-size: variables.$font-size26;
+   }
+
+   &__divider {
+    margin-top: 39px;
+    margin-bottom: 10px;
+   }
+
+   &__descr-img1 {
+    top: 193px;
+    left: -107px;
+   }
+
+   &__title-img2 {
+    font-size: variables.$font-size29;
+    margin-top: 20px;
+   }
+
+   &__descr-img2 {
+    font-size: variables.$font-size18;
+    margin-top: 20px;
+   }
+
+   &__price-img2 {
+    margin-top: 20px;
+   }
+
+   &__price1 {
+    font-size: variables.$font-size29;
+   }
+
+   &__price2 {
+    font-size: variables.$font-size22;
+   }
   }
 }
