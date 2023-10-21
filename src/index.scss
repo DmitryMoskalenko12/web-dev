@@ -2,6 +2,7 @@
 @import 'style/fonts';
 @import 'style/variables';
 @import 'style/header';
+@import 'style/tabs';
 
 * {
   box-sizing: border-box;
@@ -10,7 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'TharLon', 'Tenor Sans', sans-serif;
+  font-family: 'TharLon', 'Tenor Sans', 'Montserrat', sans-serif;
 }
 
 ul {
@@ -62,5 +63,11 @@ p {
 @media (min-width: 1440px) {
   .container {
     max-width: 1320px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
   }
 }

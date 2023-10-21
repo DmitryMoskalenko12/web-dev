@@ -1,0 +1,413 @@
+@use 'variables';
+@use 'mixins';
+
+.header {
+  padding: 15px;
+  background-color: variables.$first-back;
+
+  &__nav {
+    display: none;
+  }
+
+  &__main-title {
+   display: none;
+  }
+
+  &__phone {
+    display: none;
+  }
+
+  &__icons {
+    @include mixins.flex(flex, center, center);
+    a {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__main-header {
+    position: relative;
+    @include mixins.flex(flex, space-between, center);
+    flex-direction: row-reverse;
+  }
+
+  &__burger {
+    width: 36px;
+    height: 36px;
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+    background: variables.$white-back;
+    border-radius: 100%;
+    gap: 3px;
+    cursor: pointer;
+    div {
+      width: 20px;
+      height: 3px;
+      background: variables.$black-back;
+      transition: variables.$transition;
+    }
+
+    &_burger-active {
+      div {
+        transition: variables.$transition;
+        margin-bottom: -1px;
+        &:nth-child(1) {
+          transform: translateY(2px) rotate(-45deg);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: translateY(-3px) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__hr {
+   width: 100%;
+   margin: 0;
+   margin-top: 15px;
+  }
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: variables.$transition;
+  background: variables.$white-back;
+  width: 70%;
+  height: 100vh;
+  z-index: 10;
+  overflow-y: auto;
+
+  &__title-close {
+    position: relative;
+    background: variables.$title-close;
+    @include mixins.flex(flex, center, center);
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: variables.$title-color;
+    padding: 15px 0 15px 0;
+    text-align: center;
+    font-size: variables.$font-size30;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 3px;
+  }
+
+  &__item {
+    border-bottom: 1px solid variables.$title-close;
+  }
+
+  &__info {
+    padding: 0 10px 0px 10px;
+  }
+
+  &__li {
+    a {
+    color: variables.$black-back;
+    font-size: variables.$font-size14;
+    font-weight: variables.$font-weight400;
+    text-decoration: none;
+    }
+  }
+
+  &__button {
+   width: 100%;
+   padding: 10px;
+   @include mixins.flex(flex, space-between, center);
+   background: transparent;
+   border: none;
+   color: variables.$title-color;
+   font-size: variables.$font-size16;
+   font-weight: variables.$font-weight400;
+   letter-spacing: 2.4px;
+   text-transform: capitalize;
+  }
+
+  &_active {
+    left: 0;
+    transition: variables.$transition;
+    z-index: 10
+  }
+
+  &__info {
+    display: none;
+    &_active {
+      display: block;
+    }
+  }
+
+  &__follow {
+    padding: 0 10px 0 10px;
+    @include mixins.flex(flex, flex-start, center);
+    gap: 13px;
+    margin-top: 30px;
+    color: variables.$title-color;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight500;
+    letter-spacing: 1.6px;
+  }
+
+  &__svg-block {
+    @include mixins.flex(flex, space-between, center);
+    gap: 15px;
+  }
+
+  &__img {
+    padding: 0 10px 0 10px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    &__main-header {
+     flex-direction: row;  
+    }
+
+    &__nav {
+      display: initial;
+    }
+
+    &__burg-nav {
+      @include mixins.flex(flex, center, center);
+      gap: 50px;
+    }
+
+    &__list {
+      @include mixins.flex(flex, center, center);
+      gap: 0px;
+    }
+
+    &__icons {
+      a {
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    &__li {
+      a {
+        color: variables.$white-back;
+        font-size: variables.$font-size14;
+        font-weight: variables.$font-weight400;
+        text-decoration: none;
+        padding: 0 12px 0 12px;
+      }
+    }
+
+    &__phone {
+      display: initial;
+      color: variables.$white-back;
+      font-size: variables.$font-size14;
+      font-weight: variables.$font-weight400;
+      text-decoration: none;
+    }
+  }
+
+  .side-menu {
+    width: 40%;
+    &__item {
+      &_remove {
+       display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+
+    &__main-title {
+      position: relative;
+      display: initial;
+      color: variables.$white-back;
+      text-align: center;
+      font-size: variables.$font-size30;
+      font-weight: variables.$font-weight400;
+      letter-spacing: 3.2px;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -18px;
+        left: -12px;
+        width: 1px;
+        height: 16px;
+        background: variables.$white-back;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        bottom: -18px;
+        right: -12px;
+        width: 1px;
+        height: 16px;
+        background: variables.$white-back;;
+      }
+    }
+
+    &__icons {
+      a {
+        svg {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+
+  }
+
+  .side-menu {
+    width: 30%;
+
+    &__button {
+      cursor: pointer;
+      padding: 15px;
+      font-size: variables.$font-size16;
+    }
+
+    &__info {
+      padding: 0 15px 0px 15px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+
+   &__li {
+    a {
+      padding: 0 15px 0 15px;
+      font-size: variables.$font-size16;
+    }
+   }
+
+   &__main-title {
+    font-size: variables.$font-size35;
+    &::after {
+      content: '';
+      left: -21px;
+    }
+    &:before {
+      content: '';
+      right: -21px;
+    }
+   }
+
+   &__phone {
+    font-size: variables.$font-size16;
+   }
+  }
+
+  .side-menu {
+    width: 528px;
+
+    &__img {
+      padding: 0 25px 0 25px;
+      width: 478px;
+      height: 178px;
+      margin: 0;
+      margin-top: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__follow {
+      padding: 0 25px 0 25px;
+    }
+
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    padding: 15px 60px 15px 60px;
+
+   &__li {
+    a {
+      font-size: variables.$font-size18;
+    }
+   }
+
+   &__main-title {
+    font-size: variables.$font-size40;
+    &::after {
+      content: '';
+      left: -21px;
+    }
+    &:before {
+      content: '';
+      right: -21px;
+    }
+   }
+
+   &__phone {
+    font-size: variables.$font-size18;
+  }
+  }
+
+  .side-menu {
+    &__button {
+      padding: 25px;
+      font-size: variables.$font-size24;
+    }
+
+    &__info {
+      padding: 0 25px 0px 25px;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .header {
+   &__main-title {
+    &::after {
+      content: '';
+      left: -55px;
+    }
+    &:before {
+      content: '';
+      right: -55px;
+    }
+   }
+  }
+
+  .side-menu {
+    height: 1025px;
+    &__follow {
+      margin-top: 189px;
+    }
+
+    &__button {
+      padding: 21px;
+    }
+  }
+}
