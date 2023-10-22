@@ -1,0 +1,363 @@
+@use 'variables';
+@use 'mixins';
+
+.products {
+  padding: 15px;
+  &__title {
+    color: variables.$carousel-title;
+    font-size: variables.$font-size20;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__main-title {
+    color: variables.$carousel-title;
+    font-size: variables.$font-size26;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 4.8px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__all-sale {
+    @include mixins.flex(flex, center, center);
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  &__all-block, &__sale-block {
+    @include mixins.flex(flex, center, center);
+    border: 1px solid variables.$carousel-title;
+  }
+
+  &__all, &__sale {
+    position: relative;
+    padding: 8px 20px 8px 15px;
+    color: variables.$carousel-title;
+    font-size: variables.$font-size10;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      display: block;
+      width: 13px;
+      height: 1px;
+      background: variables.$carousel-title;
+      transform: translateY(-50%);
+    }
+  }
+  
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__card {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__img-block {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__stock {
+    position: absolute;
+    @include mixins.flex(flex, center, center);
+    background: variables.$first-back;
+    bottom: 5px;
+    left: 0;
+  }
+
+  &__stock-name {
+    position: relative;
+    padding: 2px 8px 2px 16px;
+    color: variables.$white-back;
+    font-size: variables.$font-size7;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      display: block;
+      width: 12px;
+      height: 1px;
+      background: variables.$white-back;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__card-brand {
+    color: variables.$brand-color;
+    font-size: variables.$font-size14;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+
+  &__card-title {
+    color: variables.$carousel-title;
+    font-size: variables.$font-size15;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 4px;
+  }
+
+  &__items-block {
+    @include mixins.flex(flex, space-between, flex-start);
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  &__price-block {
+    @include mixins.flex(flex, space-between, center);
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  &__new-price {
+    color: variables.$new-price;
+    font-size: variables.$font-size12;
+    font-weight: variables.$font-weight400;
+    &_color {
+     color: variables.$first-back
+    }
+  }
+
+  &__old-price {
+    color: variables.$brand-color;
+    font-size: variables.$font-size10;
+    font-weight: variables.$font-weight400;
+    text-decoration-line: line-through;
+  }
+
+  &__view-block {
+    @include mixins.flex(flex, center, center);
+    gap: 7px;
+  }
+
+  &__add {
+    position: relative;
+    color: variables.$prod-item;
+    font-size: variables.$font-size10;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 100%;
+      bottom: -2px;
+      display: block;
+      height: 1px;
+      background: variables.$carousel-title;
+    }
+  }
+
+  &__like-share {
+    @include mixins.flex(flex, center, center);
+    gap: 8px;
+  }
+
+  &__svg {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .products {
+    &__wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__card-title {
+      font-size: variables.$font-size20;
+    }
+
+    &__new-price {
+      font-size: variables.$font-size16;
+    }
+
+    &__old-price {
+      font-size: variables.$font-size14;
+    }
+
+    &__add {
+      font-size: variables.$font-size14;
+    }
+
+    &__stock-name {
+      padding: 2px 8px 2px 22px;
+      font-size: 9px;
+      &:before {
+        width: 14px;
+        left: 4px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .products {
+    &__wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 24px;
+    }
+
+    &__img-block {
+      height: 320px;
+    }
+
+    &__all, &__sale {
+      padding: 12px 37px 12px 24px;
+      font-size: variables.$font-size12;
+      &:after {
+        right: 10px;
+        width: 20px;
+      }
+    }
+
+    &__all-sale {
+      margin-top: 30px;
+    }
+
+    &__add {
+      font-size: variables.$font-size12;
+    }
+
+    &__card-title {
+      font-size: variables.$font-size18;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .products {
+    &__wrapper {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &__img-block {
+      height: 350px;
+    }
+
+    &__add {
+      font-size: variables.$font-size14;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .products {
+    padding: 0 51.5px 50px 51.5px;
+    &__wrapper {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &__add {
+      font-size: variables.$font-size12;
+    }
+
+    &__img-block {
+      height: 400px;
+    }
+
+    &__stock-name {
+      padding: 2px 8px 2px 31px;
+      font-size: variables.$font-size12;
+      &:before {
+        width: 23px;
+        left: 4px;
+      }
+    }
+
+    &__stock {
+      bottom: 16px;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .products {
+    padding: 92px 160px 121px 160px;
+    &__wrapper {
+      gap: 32px;
+    }
+
+    &__main-title {
+      font-size: variables.$font-size48;
+    }
+
+    &__img-block {
+      height: 472px;
+    }
+
+    &__items-block {
+      gap: 20px;
+    }
+
+    &__price-block {
+      gap: 14px;
+    }
+
+    &__new-price {
+      font-size: variables.$font-size18;
+    }
+
+    &__old-price {
+      font-size: variables.$font-size16;
+    }
+
+    &__view-block {
+      gap: 14px;
+    }
+
+    &__add {
+      font-size: variables.$font-size12;
+    }
+
+    &__like-share {
+      gap: 14px;
+    }
+
+    &__card-title {
+      font-size: variables.$font-size23;
+    }
+
+    &__card-brand {
+      font-size: variables.$font-size16;
+    }
+
+  }
+}
