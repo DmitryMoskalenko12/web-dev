@@ -100,6 +100,7 @@
 
   &__luminaire {
     color: variables.$white-back;
+    font-family: 'Tenor Sans';
     font-size: variables.$font-size29;
     font-weight: variables.$font-weight400;
     letter-spacing: 3.2px;
@@ -128,6 +129,7 @@
   }
 
   &__moto-home {
+    font-family: 'Barlow';
     color: variables.$footer-color;
     font-size: variables.$font-size14;
     font-weight: variables.$font-weight400;
@@ -138,6 +140,7 @@
   }
 
   &__follow {
+    font-family: 'Poppins';
     color: variables.$footer-color;
     font-size: variables.$font-size14;
     font-weight: variables.$font-weight400;

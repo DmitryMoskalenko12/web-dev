@@ -163,6 +163,10 @@
     letter-spacing: 1.6px;
   }
 
+  &__text-follow {
+    font-family: 'Montserrat', sans-serif;
+  }
+
   &__svg-block {
     @include mixins.flex(flex, space-between, center);
     gap: 15px;
@@ -257,6 +261,7 @@
       display: initial;
       color: variables.$white-back;
       text-align: center;
+      font-family: 'Tenor Sans';
       font-size: variables.$font-size30;
       font-weight: variables.$font-weight400;
       letter-spacing: 3.2px;
