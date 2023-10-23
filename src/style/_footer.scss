@@ -1,0 +1,392 @@
+@use 'variables';
+@use 'mixins';
+
+.footer {
+  padding: 15px 0 15px 0;
+  background-color: variables.$first-back;
+
+  &__subscribe-wrapper {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+  }
+
+  &__subscribe-block {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+  }
+
+  &__subscribe {
+    color: variables.$white-back;
+    text-align: center;
+    font-size: variables.$font-size26;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  &__sub-subscribe {
+    color: variables.$footer-sub;
+    font-size: variables.$font-size18;
+    font-weight: variables.$font-weight400;
+    margin-top: 10px;
+  }
+
+  &__form {
+    margin-top: 15px;
+  }
+
+  &__input-block {
+    position: relative;
+  }
+
+  &__input {
+    padding: 14px 14px 14px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid variables.$footer-sub;
+    &::placeholder {
+      color: variables.$white-back;
+      font-size: variables.$font-size12;
+      font-weight: variables.$font-weight400;
+    }
+  }
+
+  &__form-button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    top: 15px;
+    right: 0;
+  }
+
+  &__hr1 {
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  &__wrapper-links {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__list1, &__list2, &__list3, &__list4 {
+    @include mixins.flex(flex, center, center);
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%
+  }
+
+  &__link {
+    @include mixins.flex(flex, flex-start, flex-start);
+    padding: 8px 0;
+    color: variables.$white-back;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight400;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  &__link-wrap {
+    margin-top: 4px;
+    font-style: normal;
+    font-size: variables.$font-size16;
+    font-weight: variables.$font-weight400;
+  }
+
+  &__luminaire {
+    color: variables.$white-back;
+    font-size: variables.$font-size29;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 3.2px;
+    align-self: center;
+  }
+
+  &__products {
+    color: variables.$footer-color;
+    font-size: variables.$font-size20;
+    font-weight: variables.$font-weight400;
+    letter-spacing: 3.84px;
+    text-transform: uppercase;
+    align-self: center;
+    margin-top: 15px;
+  }
+
+  &__hr2 {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__moto-home-wrapper {
+    padding: 0 15px;
+    @include mixins.flex(flex, space-between, center);
+  }
+
+  &__moto-home {
+    color: variables.$footer-color;
+    font-size: variables.$font-size14;
+    font-weight: variables.$font-weight400;
+  }
+
+  &__follow-block {
+    @include mixins.flex(flex, center, center);
+  }
+
+  &__follow {
+    color: variables.$footer-color;
+    font-size: variables.$font-size14;
+    font-weight: variables.$font-weight400;
+  }
+
+  &__icons {
+    @include mixins.flex(flex, space-between, center);
+  }
+
+  &__svg-link {
+    display: block;
+  }
+
+  &__svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media(min-width: 768px) {
+  .footer {
+    &__subscribe-wrapper {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__subscribe {
+      font-size: variables.$font-size16;
+    }
+
+    &__sub-subscribe {
+      font-size: variables.$font-size14;
+    }
+
+    &__wrapper-links {
+      grid-template-columns: repeat(4, 1fr);
+      align-items: start;
+      gap: 12px;
+    }
+
+    &__list1, &__list2, &__list3, &__list4 {
+      align-items: flex-start;
+    }
+
+    &__luminaire {
+      font-size: variables.$font-size26;
+      align-self: flex-start;
+    }
+
+    &__link-wrap {
+      font-size: variables.$font-size12;
+    }
+
+    &__products {
+      font-size: variables.$font-size14;
+      align-self: flex-start;
+      margin-top: 9px;
+    }
+
+    &__link {
+      font-size: variables.$font-size12;
+      gap: 0;
+    }
+
+    &__moto-home-wrapper {
+      padding: 0 0px
+    }
+
+    &__moto-home {
+      font-size: variables.$font-size12;
+    }
+
+    &__follow {
+      font-size: variables.$font-size12;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .footer {
+    &__subscribe-wrapper {
+      padding: 0 15px;
+    }
+
+    &__subscribe-block {
+      align-items: flex-start;
+    }
+
+    &__subscribe {
+      font-size: variables.$font-size20;
+    }
+
+    &__sub-subscribe {
+      font-size: variables.$font-size16;
+    }
+
+    &__input {
+     width: 300px;
+    }
+
+    &__wrapper-links {
+      padding: 0 15px;
+    }
+
+    &__luminaire {
+      font-size: variables.$font-size30;
+      margin-bottom: 7px;
+    }
+
+    &__link-wrap {
+      font-size: variables.$font-size14;
+    }
+
+    &__products {
+      font-size: variables.$font-size18;
+      margin-bottom: 15px;
+    }
+
+    &__link {
+      font-size: variables.$font-size14;
+      gap: 1px;
+    }
+
+    &__moto-home-wrapper {
+      padding: 0 15px
+    }
+
+    &__moto-home {
+      font-size: variables.$font-size14;
+    }
+
+    &__follow {
+      font-size: variables.$font-size14;
+    }
+
+    &__svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .footer {
+    padding: 48px 0 24px 0;
+    &__subscribe-wrapper {
+      padding: 0 0;
+    }
+
+    &__subscribe {
+      font-size: variables.$font-size30;
+    }
+
+    &__input {
+      width: 350px;
+    }
+
+    &__sub-subscribe {
+      font-size: variables.$font-size16;
+    }
+
+    &__wrapper-links {
+      margin-top: 40px;
+      padding: 0 0px;
+    }
+
+    &__luminaire {
+      font-size: variables.$font-size40;
+      margin-bottom: 14px;
+    }
+
+    &__link-wrap {
+      font-size: variables.$font-size16;
+    }
+
+    &__products {
+      font-size: variables.$font-size24;
+      margin-bottom: 24px;
+    }
+
+    &__link {
+      font-size: variables.$font-size16;
+      gap: 7px;
+    }
+
+    &__moto-home-wrapper {
+      padding: 0 0px;
+      margin-top: 24px;
+    }
+
+    &__moto-home {
+      font-size: variables.$font-size16;
+    }
+
+    &__follow {
+      font-size: variables.$font-size16;
+    }
+
+    &__hr1 {
+     margin-top: 48px;
+    }
+
+    &__hr2 {
+      margin-top: 60px;
+    }
+  }
+}
+
+@media(min-width: 1440px) {
+  .footer {
+
+    &__input {
+      width: 420px;
+    }
+  }
+}
+
+@media(min-width: 1920px) {
+  .footer {
+    &__subscribe {
+      font-size: variables.$font-size40;
+    }
+
+    &__sub-subscribe {
+      font-size: variables.$font-size18;
+    }
+
+    &__input {
+      width: 648px;
+    }
+
+    &__luminaire {
+      margin-bottom: 11px;
+    }
+
+    &__link {
+      padding: 12px 0;
+    }
+
+    &__hr1 {
+      margin-top: 68.5px;
+     }
+ 
+    &__hr2 {
+      margin-top: 80px;
+    }
+
+    &__svg-link {
+      padding: 0 12px;
+    }
+  }
+}
