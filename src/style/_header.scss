@@ -50,7 +50,7 @@
       transition: variables.$transition;
     }
 
-    &_burger-active {
+    &_active {
       div {
         transition: variables.$transition;
         margin-bottom: -1px;
@@ -68,7 +68,7 @@
   }
 
   &__hr {
-   width: 100%;
+   width: 99.2%;
    margin: 0;
    margin-top: 15px;
   }
@@ -242,6 +242,15 @@
 
 @media (min-width: 992px) {
   .header {
+    &__li {
+      a {
+        @include mixins.hoverActive;
+      }
+    }
+
+    &__phone {
+      @include mixins.hoverActive;
+    }
 
     &__main-title {
       position: relative;
@@ -282,6 +291,9 @@
       }
     }
 
+    &__svg-link {
+      @include mixins.simpleSvg;
+    }
   }
 
   .side-menu {
@@ -408,10 +420,14 @@
       right: -55px;
     }
    }
+
+   &__svg-link {
+    padding: 0 12px;
+   }
   }
 
   .side-menu {
-    height: 1025px;
+    height: 930px;
     &__follow {
       margin-top: 189px;
     }

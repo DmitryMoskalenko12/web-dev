@@ -1,3 +1,4 @@
+@use 'style/variables';
 @import 'libs/normalize.css';
 @import 'style/fonts';
 @import 'style/variables';
@@ -37,6 +38,30 @@ p {
 
 .container {
   margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.5s all;
+}
+
+.overlay_active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: all;
+  transition: 0.5s all;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.40);
 }
 
 @media (min-width: 320px) {

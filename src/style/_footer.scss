@@ -199,7 +199,7 @@
 
     &__link {
       font-size: variables.$font-size12;
-      gap: 0;
+      gap: 6px;
     }
 
     &__moto-home-wrapper {
@@ -224,6 +224,10 @@
 
     &__subscribe-block {
       align-items: flex-start;
+    }
+
+    &__form-button {
+      @include mixins.simpleSvg;
     }
 
     &__subscribe {
@@ -259,6 +263,7 @@
     &__link {
       font-size: variables.$font-size14;
       gap: 1px;
+      @include mixins.hoverActiveSvg;
     }
 
     &__moto-home-wrapper {
@@ -273,9 +278,32 @@
       font-size: variables.$font-size14;
     }
 
-    &__svg {
-      width: 24px;
-      height: 24px;
+    $colors: (
+      (color: $face, name: 'color1'),
+      (color: $twit, name: 'color2'),
+      (color: $insta, name: 'color3')
+    );
+    
+    @each $color in $colors {
+      $color-name: map-get($color, name);
+      $color-value: map-get($color, color);
+    
+      &__svg {
+        width: 24px;
+        height: 24px;
+        &_#{$color-name} {
+          path {
+            transition: variables.$transition;
+          }
+          &:hover {
+            path {
+              transition: variables.$transition;
+              stroke: $color-value;
+              fill: $color-value;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -343,6 +371,10 @@
     &__hr2 {
       margin-top: 60px;
     }
+
+    &__svg-link {
+      padding: 0 12px;
+    }
   }
 }
 
@@ -383,10 +415,6 @@
  
     &__hr2 {
       margin-top: 80px;
-    }
-
-    &__svg-link {
-      padding: 0 12px;
     }
   }
 }

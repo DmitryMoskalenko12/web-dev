@@ -161,6 +161,19 @@
   &__view-block {
     @include mixins.flex(flex, center, center);
     gap: 7px;
+    opacity: 0;
+    &_active {
+      opacity: 1;
+    }
+  }
+
+  &__like-share {
+    @include mixins.flex(flex, center, center);
+    gap: 8px;
+    opacity: 0;
+    &_active {
+      opacity: 1;
+    }
   }
 
   &__add {
@@ -181,11 +194,6 @@
       height: 1px;
       background: variables.$carousel-title;
     }
-  }
-
-  &__like-share {
-    @include mixins.flex(flex, center, center);
-    gap: 8px;
   }
 
   &__svg {
@@ -246,6 +254,12 @@
         right: 10px;
         width: 20px;
       }
+      transition: variables.$transition;
+      &:hover {
+        transition: variables.$transition;
+        background: variables.$view;
+        color:variables.$white-back;
+      }
     }
 
     &__all-sale {
@@ -253,11 +267,49 @@
     }
 
     &__add {
-      font-size: variables.$font-size12;
+      font-size: variables.$font-size11;
+      @include mixins.hoverActive;
+      &:after {
+        transition: variables.$transition;
+      }
+      &:hover {
+        &:after {
+          transition: variables.$transition;
+          background: variables.$link-hover;
+        }
+      }
     }
 
     &__card-title {
       font-size: variables.$font-size18;
+    }
+
+    &__svg {
+      &_item1 {
+        path {
+          transition: variables.$transition;
+        }
+        &:hover {
+          path {
+            transition: variables.$transition;
+            stroke: variables.$view;
+          }
+        }
+      }
+    }
+    &__svg {
+      &_item2 {
+        path {
+          transition: variables.$transition;
+        }
+        &:hover {
+          path {
+            transition: variables.$transition;
+            stroke: variables.$heart;
+            fill: variables.$heart;
+          }
+        }
+      }
     }
   }
 }
@@ -328,7 +380,7 @@
     }
 
     &__price-block {
-      gap: 14px;
+      gap: 5px;
     }
 
     &__new-price {

@@ -1,5 +1,66 @@
+@use 'variables';
+
 @mixin flex ($flex, $jc, $ai) {
   display: $flex;
   justify-content: $jc;
   align-items: $ai;
+}
+
+@mixin hoverActive {
+  transition: variables.$transition;
+  &:hover {
+    transition: variables.$transition;
+    color: variables.$link-hover
+  }
+  &:active {
+    color: variables.$but-active;
+  }
+}
+
+@mixin hoverActiveSvg {
+  svg {
+    path {
+      transition: variables.$transition;
+    }
+  }
+
+  &:hover {
+    transition: variables.$transition;
+    color: variables.$link-hover;
+    svg {
+      path {
+        transition: variables.$transition;
+        stroke: variables.$link-hover;
+      }
+    }
+  }
+
+  &:active {
+    transition: variables.$transition;
+    color: variables.$but-active;
+    svg {
+      path {
+        stroke: variables.$but-active;
+      }
+    }
+  }
+}
+
+@mixin simpleSvg {
+  svg {
+    path {
+      transition: variables.$transition;
+    }
+    &:hover {
+      path {
+        transition: variables.$transition;
+        stroke: variables.$link-hover;
+      }
+    }
+    &:active {
+      path {
+        stroke: variables.$but-active;
+      }
+    }
+  }
 }

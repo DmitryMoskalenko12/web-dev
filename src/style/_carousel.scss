@@ -32,14 +32,27 @@
   }
 
   &__link {
+    position: relative;
     display: block;
+    width: max-content;
     color: variables.$carousel-title;
     font-size: variables.$font-size12;
     font-weight: variables.$font-weight400;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    text-align: center;
+    margin: 0 auto;
     margin-top: 10px;
+    text-decoration: none;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 100%;
+      bottom: -2px;
+      display: block;
+      height: 2px;
+      background: variables.$carousel-title;
+    }
   }
 
   &__img {
@@ -58,6 +71,18 @@
 }
 
 @media (min-width: 992px) {
+  .carousel {
+    &__link {
+      @include mixins.hoverActive;
+      &:hover {
+        &:after {
+          transition: variables.$transition;
+          background: variables.$link-hover;
+        }
+      }
+    }
+  }
+  
   .swiper-slide {
     cursor: grab;
   }

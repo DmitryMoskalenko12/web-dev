@@ -182,6 +182,11 @@
       gap: 30px;
     }
 
+    &__link {
+      transition: variables.$transition;
+      @include mixins.hoverActiveSvg;
+    }
+
     &__img1 {
       width: 455px;
     }
@@ -217,10 +222,31 @@
       margin: 0;
     }
 
+    &__number {
+      @include mixins.hoverActive;
+    }
+
     &__nav-button {
       cursor: pointer;
       border: none;
       background: transparent;
+      svg {
+        path {
+          transition: variables.$transition;
+        }
+
+        &:hover {
+          path {
+            transition: variables.$transition;
+            stroke: variables.$link-hover;
+          }
+        }
+        &:active {
+          path {
+            stroke: variables.$but-active;
+          }
+        }
+      }
     }
 
   }
